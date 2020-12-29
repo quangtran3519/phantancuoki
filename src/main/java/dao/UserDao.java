@@ -10,7 +10,7 @@ import entity.User;
 public interface UserDao extends Remote {
 	//+ addUser(u: User): boolean
 	public boolean addUSer(User u) throws RemoteException; 
-	
+	public User getUSer(Long id) throws RemoteException; 
 	//+ getStatistics(): Map<User, Integer>
 	
 	public Map<User, Integer> getStatistics() throws RemoteException;

@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -11,9 +12,10 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.Table;
 @Entity
-@Table(name = "users")
+@Table(name = "users", indexes = @Index(columnList = "userName,userEmail "))
 public class User implements Serializable {
 	@Id
 	private long id;
@@ -32,7 +34,7 @@ public class User implements Serializable {
 	
 	
 	@ElementCollection
-	private List<Comment> comments;
+	private List<Comment> comments = new ArrayList<Comment>();
 	public User() {
 		// TODO Auto-generated constructor stub
 	}

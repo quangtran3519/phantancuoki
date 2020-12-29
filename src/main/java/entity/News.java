@@ -8,12 +8,13 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.Table;
 @Entity
 @Table(name = "news")
 public class News implements Serializable {
 	@Id
-	private Long id;
+	private Long id;	
 	private String newsTitle;
 	private String newsContent;
 	private LocalDateTime creationDate;
